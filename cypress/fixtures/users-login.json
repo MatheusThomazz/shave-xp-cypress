@@ -1,0 +1,30 @@
+{
+    "sucess": {
+        "name": "Matheus",
+        "email": "matheus@hotmail.com",
+        "password": "220684"
+    },
+    "invpass": {
+        "email": "matheus@hotmail.com",
+        "password": "123456"
+    },
+    "email404": {
+        "email": "matheus@404.com",
+        "password": "220684"
+    }, 
+    "shortpass": [
+        "1",
+        "12",
+        "123",
+        "1234",
+        "12345"
+    ],
+    "invemails":[
+        "matehsu$$gmail",
+        "matheus.com.br",
+        "@",
+        "123434344",
+        "$#%@&",
+        "hgjdksh"
+    ]
+}

@@ -1,18 +1,16 @@
 import loginPage from "../support/pages/login"
 import shaversPage from "../support/pages/shavers"
 
+import data from '../fixtures/users-login.json'
+
 
 describe('login', () => {
 
     context('quando submeto o formulario', () => {
 
 
-        it('deve logar com sucesso', () => {
-            const user = {
-                name: 'Matheus',
-                email: 'matheus@hotmail.com',
-                password: '220684'
-            }
+        it.only('deve logar com sucesso', () => {
+            const user = data.sucess
 
             loginPage.submit(user.email, user.password)
             shaversPage.header.userShouldBeLoggedIn(user.name)
@@ -21,11 +19,7 @@ describe('login', () => {
 
         it('não deve logar com senha incorreta', () => {
 
-            const user = {
-                name: 'Matheus',
-                email: 'matheus@hotmail.com',
-                password: '123456'
-            }
+            const user = data.invpass
 
             loginPage.submit(user.email, user.password)
 
@@ -36,11 +30,7 @@ describe('login', () => {
 
         it('não deve logar com email não cadastrado', () => {
 
-            const user = {
-                name: 'Matheus',
-                email: 'matheus@404hotmail.com',
-                password: '123456'
-            }
+            const user = data.email404
 
             loginPage.submit(user.email, user.password)
 
@@ -58,16 +48,7 @@ describe('login', () => {
     })
 
     context('senha muito curta', () => {
-
-        const passwords = [
-            '1',
-            '12',
-            '123',
-            '1234',
-            '12345'
-        ]
-
-        passwords.forEach((p) => {
+        data.shortpass.forEach((p) => {
             it(`não deve logar com senha ${p}`, () => {
                 loginPage.submit('matheus@hotmail.com', p)
                 loginPage.alertShouldBe('Pelo menos 6 caracteres')
@@ -78,16 +59,7 @@ describe('login', () => {
 
     context('email no formato incorreto', () => {
 
-        const emails = [
-            'matehsu$$gmail',
-            'matheus.com.br',
-            '@',
-            '123434344',
-            '$#%@&',
-            'hgjdksh'
-        ]
-
-        emails.forEach((e) => {
+        data.invemails.forEach((e) => {
             it(`não deve logar com senha ${e}`, () => {
                 loginPage.submit(e, '220684')
                 loginPage.alertShouldBe('Informe um email válido')
