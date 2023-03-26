@@ -2,7 +2,8 @@
     "sucess": {
         "name": "Matheus",
         "email": "matheus@hotmail.com",
-        "password": "220684"
+        "password": "220684",
+        "is_shaver": false
     },
     "invpass": {
         "email": "matheus@hotmail.com",
