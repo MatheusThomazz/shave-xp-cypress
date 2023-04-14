@@ -1,0 +1,16 @@
+{
+    "customer": {
+        "name": "Cris Connor",
+        "email": "cris@gmail.com",
+        "password": "123456",
+        "is_shaver": false
+    },
+    "shaver": {
+        "name": "Jeremy Adams"
+    },
+    "service": {
+        "description": "Corte de cabelo",
+        "price": "79,99"
+
+    }
+}
